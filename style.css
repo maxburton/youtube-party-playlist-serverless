@@ -1,0 +1,142 @@
+table, td {
+  border-spacing: 0px 0;
+  /*border: 2px solid black;*/
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+.indextable{
+    width:100%;
+    vertical-align: top;
+}
+
+.indextable td{
+    height: 100px;
+}
+
+.guesttable{
+    width:100%;
+}
+
+.hosttable td {
+	padding-left:10px;
+	padding-right:10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.hosttable table {
+    width: 100%;
+}
+
+.comingup{
+	width: 100%;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.red {
+    color: red;
+}
+
+.border{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width:100%;
+
+}
+
+.border td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 5px 5px 5px;
+    width:100%;
+
+}
+
+.border th {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 5px 5px 5px;
+}
+
+#urlBox
+{
+    height:55px;
+    width:100%;
+    font-size:20pt;
+    font-family: 'Didact Gothic';
+}
+
+#nameBox
+{
+    height:55px;
+    width:100%;
+    font-size:20pt;
+    font-family: 'Didact Gothic';
+}
+
+.textBox{
+    height:55px;
+    width:100%;
+    font-size:20pt;
+    font-family: 'Didact Gothic';
+}
+
+#voteskip_counter{
+	width:100%;
+	font-size: 20pt;
+}
+
+h1{
+    font-size:72pt;
+    font-family: 'Arvo';
+    text-align: center;
+}
+
+h2{
+	text-align: center;
+    font-size:32pt;
+    font-family: 'Arvo';
+}
+
+h3{
+	padding: 5px;
+    margin: 5px;
+    font-size:24pt;
+    font-family: 'Arvo';
+}
+
+p{
+    font-size:14pt;
+    font-family: 'Didact Gothic';
+}
+
+.results td{
+	padding: 5px 5px 5px 5px;
+}
+
+.results table{
+	width: 100%;
+}
+
+.hostButtons td{
+	height: 160px;
+	text-align:center;
+}
+
+.load{
+	font-weight: bold;
+}
+
+.submit-button{
+    font-size:28pt;
+    font-family: 'Didact Gothic';
+    height: 80px;
+    width: 100%;
+}
