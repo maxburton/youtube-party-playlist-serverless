@@ -1,6 +1,4 @@
 <?php include "/var/www/inc/dbinfo.inc"; ?>
-<html>
-<head>
     <?php include("./head.html");?>
     
 	<!--<script src="jquery-3.3.1.min.js"></script>-->

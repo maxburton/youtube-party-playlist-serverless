@@ -1,8 +1,8 @@
 <?php include "/var/www/inc/dbinfo.inc"; ?>
-<html>
-<head>
-    <title>YPPT</title>
-    <?php include("./head.html");
+    <?php include("./head.html"); ?>
+	<title>YPP</title>
+	
+	<?php
     
     /* Connect to MySQL and select the database. */
     $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
@@ -27,8 +27,8 @@
 
 <body>
     
-    <h1>Youtube Party Playlist Tool</h1>
-    <h2>Let many people add music or videos to a local playlist in a fair way</h2>
+    <h1>Youtube Party Playlist</h1>
+    <h2>Let your friends add music or videos to a shared playlist in a fair way</h2>
 	<?php
         if(isset($_COOKIE["userID"])) {
             echo "<h3>Hi there, " . $_COOKIE['username'] . "!</h3>";

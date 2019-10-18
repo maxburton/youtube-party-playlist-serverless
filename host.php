@@ -1,6 +1,4 @@
 <?php include "/var/www/inc/dbinfo.inc"; ?>
-<html>
-    <head>
 	<?php include("./head.html");?>
     <?php
 	
