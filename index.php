@@ -136,7 +136,11 @@ if ($result = mysqli_query($connection, $sql)) {
                                     <td>
                                         <?php
                                         if (isset($_COOKIE["lastRoomID"]) && isset($_COOKIE["userID"])) {
-                                            echo "<button id='rejoinRoom' class='submit-button' >Rejoin Room " . $_COOKIE["lastRoomID"] . "</button>";
+                                            echo '
+                                            </div></div>
+                                            <div class="row index-button">
+                                            <div class="col">
+                                            <button id="rejoinRoom" class="submit-button" >Rejoin Room =' . $_COOKIE["lastRoomID"] . '</button>';
                                         }
                                         ?>
                                     </td>
