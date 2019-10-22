@@ -26,146 +26,163 @@ if ($result = mysqli_query($connection, $sql)) {
 </head>
 
 <body>
-    <div class="content">
-
-        <h1>Youtube Party Playlist</h1>
-        <h2>Let your friends add music or videos to a shared playlist in a fair way</h2>
-        <?php
-        if (isset($_COOKIE["userID"])) {
-            echo "<h3>Hi there, " . $_COOKIE['username'] . "!</h3>";
-        } else {
-            echo "<h3>Enter Your Name:</h3>";
-        }
-        ?>
-        <table class="indextable">
-            <tr>
-                <td>
-                    <?php
-                    if (isset($_COOKIE["userID"])) {
-                        echo "
-                <button id='rename' class='submit-button'>Change Name</button>";
-                    } else {
-                        echo '<form id="nameform" action="newuser.php" method="post">';
-                        echo '<h3> <input type="text" id="nameBox" name="name"></h3>';
-                        echo '<input type="hidden" name="def" value="default" />';
-                        if ($count >= 10) {
-                            $a = rand(2, 9);
-                            $b = rand(2, 9);
-                            $c = $a + $b;
-                            echo '<input type="hidden" name="captchacode" value="' . $c . '">';
-                            echo '<h3>Prove you\'re not a robot: ' . $a . ' + ' . $b . ' = </h3><input class="textBox" type="text" name="captcha" />';
-                        }
-                        echo '</form>';
-                        echo '<button id="rename" class="submit-button" >Submit Name</button>';
-                        if ($_GET["joined"] == "false") {
-                            echo '<h3 style="color:red" id="nameError">Invalid name, please enter a name with 20 or fewer alphanumeric characters.</h3>';
-                        } else if ($_GET["joined"] == "captcha") {
-                            echo '<h3 style="color:red" id="nameError">Incorrent answer, try again</h3>';
-                        } else if ($_GET["joined"] == "miss") {
-                            echo '<h3 style="color:red" id="nameError">Please use the form</h3>';
+    <div class="container content">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h1>Youtube Party Playlist</h1>
+                        <h2>Let your friends add music or videos to a shared playlist in a fair way</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <?php
+                        if (isset($_COOKIE["userID"])) {
+                            echo "<h3>Hi there, " . $_COOKIE['username'] . "!</h3>";
                         } else {
-                            echo '<h3 style="color:red" id="nameError"></h3>';
+                            echo "<h3>Enter Your Name:</h3>";
                         }
-                    }
-                    ?>
-                    <?php
-                    if ($_GET["badid"]) {
-                        echo "<p style='color:red'>Room doesn't exist, try again</p>";
-                    }
-                    ?>
+                        ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col indextable">
+                        <div class="row">
+                            <div class="col">
+                                <?php
+                                if (isset($_COOKIE["userID"])) {
+                                    echo "
+                <button id='rename' class='submit-button'>Change Name</button>";
+                                } else {
+                                    echo '<form id="nameform" action="newuser.php" method="post">';
+                                    echo '<h3> <input type="text" id="nameBox" name="name"></h3>';
+                                    echo '<input type="hidden" name="def" value="default" />';
+                                    if ($count >= 10) {
+                                        $a = rand(2, 9);
+                                        $b = rand(2, 9);
+                                        $c = $a + $b;
+                                        echo '<input type="hidden" name="captchacode" value="' . $c . '">';
+                                        echo '<h3>Prove you\'re not a robot: ' . $a . ' + ' . $b . ' = </h3><input class="textBox" type="text" name="captcha" />';
+                                    }
+                                    echo '</form>';
+                                    echo '<button id="rename" class="submit-button" >Submit Name</button>';
+                                    if ($_GET["joined"] == "false") {
+                                        echo '<h3 style="color:red" id="nameError">Invalid name, please enter a name with 20 or fewer alphanumeric characters.</h3>';
+                                    } else if ($_GET["joined"] == "captcha") {
+                                        echo '<h3 style="color:red" id="nameError">Incorrent answer, try again</h3>';
+                                    } else if ($_GET["joined"] == "miss") {
+                                        echo '<h3 style="color:red" id="nameError">Please use the form</h3>';
+                                    } else {
+                                        echo '<h3 style="color:red" id="nameError"></h3>';
+                                    }
+                                }
+                                ?>
+                                <?php
+                                if ($_GET["badid"]) {
+                                    echo "<p style='color:red'>Room doesn't exist, try again</p>";
+                                }
+                                ?>
 
-                    <?php
-                    if (isset($_COOKIE["userID"])) {
-                        echo '<form id="roomform" action="./makeroom.php" method="post">';
-                        echo '<input type="hidden" name="def" value="default" />';
-                        if ($count >= 10) {
-                            $a = rand(2, 9);
-                            $b = rand(2, 9);
-                            $c = $a + $b;
-                            echo '</td></tr>
-                    <tr><td>';
-                            echo '<input type="hidden" name="captchacode" value="' . $c . '">';
-                            echo '<h3>Prove you\'re not a robot: ' . $a . ' + ' . $b . ' = </h3><input class="textBox" type="text" name="captcha" />';
-                        }
-                        if ($_GET["newroom"] == "captcha") {
-                            echo '<h3 style="color:red" id="newroomError">Incorrent answer, try again</h3>';
-                        } else if ($_GET["newroom"] == "miss") {
-                            echo '<h3 style="color:red" id="nameError">Please use the form</h3>';
-                        }
-                        echo '</form>
-			</td></tr>
-			<tr><td>
+                                <?php
+                                if (isset($_COOKIE["userID"])) {
+                                    echo '<form id="roomform" action="./makeroom.php" method="post">';
+                                    echo '<input type="hidden" name="def" value="default" />';
+                                    if ($count >= 10) {
+                                        $a = rand(2, 9);
+                                        $b = rand(2, 9);
+                                        $c = $a + $b;
+                                        echo '</div></div>
+                                        <div class="row">
+                                        <div class="col">';
+                                        echo '<input type="hidden" name="captchacode" value="' . $c . '">';
+                                        echo '<h3>Prove you\'re not a robot: ' . $a . ' + ' . $b . ' = </h3><input class="textBox" type="text" name="captcha" />';
+                                    }
+                                    if ($_GET["newroom"] == "captcha") {
+                                        echo '<h3 style="color:red" id="newroomError">Incorrent answer, try again</h3>';
+                                    } else if ($_GET["newroom"] == "miss") {
+                                        echo '<h3 style="color:red" id="nameError">Please use the form</h3>';
+                                    }
+                                    echo '</form>
+                                    </div></div>
+                                    <div class="row">
+                                    <div class="col">
 			<button form="roomform" id="makeRoom" class="submit-button" >Make New Room</button>';
-                    }
-                    ?>
+                                }
+                                ?>
 
+                                <?php
+                                if (isset($_COOKIE["hostID"])) {
+                                    echo '
+                                    </div></div>
+                                    <div class="row">
+                                    <div class="col">
+		<button id="rehostRoom" class="submit-button" >Rehost Room ' . $_COOKIE["hostID"] . '</button>';
+                                }
+                                ?>
+
+                                <?php
+                                if (isset($_COOKIE["userID"])) {
+                                    echo '
+                                    </div></div>
+                                    <div class="row">
+                                    <div class="col">
+			<button id="joinRoom" class="submit-button" >Join Room</button>';
+                                }
+                                ?>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php
+                                        if (isset($_COOKIE["lastRoomID"]) && isset($_COOKIE["userID"])) {
+                                            echo "<button id='rejoinRoom' class='submit-button' >Rejoin Room " . $_COOKIE["lastRoomID"] . "</button>";
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    function setCookie(cname, cvalue) {
+                        var d = new Date();
+                        d.setTime(d.getTime() + (24 * 60 * 60 * 1000)); //1 day
+                        var expires = "expires=" + d.toUTCString();
+                        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                    }
+
+                    function getCookie(cname) {
+                        var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+                        var ca = decodedCookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                            }
+                        }
+                        return "";
+                    }
+
+                    function deleteCookie(cname) {
+                        document.cookie = cname + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    }
                     <?php
                     if (isset($_COOKIE["hostID"])) {
-                        echo "
-		</td></tr>
-		<tr><td>
-		<button id='rehostRoom' class='submit-button' >Rehost Room " . $_COOKIE["hostID"] . "</button>";
-                    }
-                    ?>
-
-                    <?php
-                    if (isset($_COOKIE["userID"])) {
                         echo '
-			</td></tr>
-			<tr><td>
-			<button id="joinRoom" class="submit-button" >Join Room</button>';
-                    }
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <?php
-                    if (isset($_COOKIE["lastRoomID"]) && isset($_COOKIE["userID"])) {
-                        echo "<button id='rejoinRoom' class='submit-button' >Rejoin Room " . $_COOKIE["lastRoomID"] . "</button>";
-                    }
-                    ?>
-                </td>
-            </tr>
-        </table>
-
-        <script type="text/javascript">
-            function setCookie(cname, cvalue) {
-                var d = new Date();
-                d.setTime(d.getTime() + (24 * 60 * 60 * 1000)); //1 day
-                var expires = "expires=" + d.toUTCString();
-                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-            }
-
-            function getCookie(cname) {
-                var name = cname + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var ca = decodedCookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
-
-            function deleteCookie(cname) {
-                document.cookie = cname + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-            }
-            <?php
-            if (isset($_COOKIE["hostID"])) {
-                echo '
     document.getElementById("rehostRoom").onclick = function () {
         location.href = "./host.php";
     };';
-            } ?>
-            <?php
-            if (isset($_COOKIE["userID"])) {
-                echo '
+                    } ?>
+                    <?php
+                    if (isset($_COOKIE["userID"])) {
+                        echo '
         document.getElementById("joinRoom").onclick = function () {
             if (getCookie("userID") != ""){
                 var input = prompt("Please enter a room number:");
@@ -176,35 +193,37 @@ if ($result = mysqli_query($connection, $sql)) {
                 }
             }
         };';
-            } ?>
+                    } ?>
 
 
-            <?php
-            if (isset($_COOKIE["lastRoomID"]) && isset($_COOKIE["userID"])) {
-                echo '
+                    <?php
+                    if (isset($_COOKIE["lastRoomID"]) && isset($_COOKIE["userID"])) {
+                        echo '
     document.getElementById("rejoinRoom").onclick = function () {
         location.href = "./guest.php?room=" + getCookie("lastRoomID");
     };';
-            } ?>
+                    } ?>
 
 
-            $(document).ready(function() {
-                $("#rename").click(function() {
-                    if (Cookies.get('userID')) {
-                        Cookies.remove('username');
-                        Cookies.remove('userID');
-                        location.href = "./deleteactive.php";
-                    } else {
-                        var $input = $("#nameBox").val();
-                        if ($input == null || $input == "" || $input.length > 20) {
-                            $("#nameError").html("Invalid name, please enter a name with 20 or fewer alphanumeric characters.");
-                        } else {
-                            $("#nameform").submit();
-                        }
-                    }
-                });
-            });
-        </script>
+                    $(document).ready(function() {
+                        $("#rename").click(function() {
+                            if (Cookies.get('userID')) {
+                                Cookies.remove('username');
+                                Cookies.remove('userID');
+                                location.href = "./deleteactive.php";
+                            } else {
+                                var $input = $("#nameBox").val();
+                                if ($input == null || $input == "" || $input.length > 20) {
+                                    $("#nameError").html("Invalid name, please enter a name with 20 or fewer alphanumeric characters.");
+                                } else {
+                                    $("#nameform").submit();
+                                }
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
     </div>
 </body>
 
