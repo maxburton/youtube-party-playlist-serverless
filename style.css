@@ -20,7 +20,6 @@ ul, li {
 }
 
 .indextable {
-    width: 100%;
     vertical-align: top;
 }
 
@@ -93,25 +92,25 @@ ul, li {
     font-size: 1.5vw;
 }
 
-h1, .content h1 {
+.content h1 {
     font-size: 6vh;
     font-family: 'Arvo';
     text-align: center;
 }
 
-h2 {
+.content h2 {
     text-align: center;
-    font-size: 3vh;
+    font-size: 2vh;
     font-family: 'Arvo';
 }
 
-h3, .content h3 {
+.content h3 {
     padding-bottom: 20px;
     font-size: 3vh;
     font-family: 'Arvo';
 }
 
-p, .content p {
+.content p {
     font-size: 1.8vh;
     font-family: 'Didact Gothic';
 }
