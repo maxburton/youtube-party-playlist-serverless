@@ -140,7 +140,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                             </div></div>
                                             <div class="row index-button">
                                             <div class="col">
-                                            <button id="rejoinRoom" class="submit-button" >Rejoin Room =' . $_COOKIE["lastRoomID"] . '</button>';
+                                            <button id="rejoinRoom" class="submit-button" >Rejoin Room ' . $_COOKIE["lastRoomID"] . '</button>';
                                         }
                                         ?>
                                     </td>
