@@ -1,1 +1,2 @@
-Set up default playlist when vids run out
+Have the top40 be one of the options for host
+Use bootstrap to tidy UI, especially in host room
