@@ -23,6 +23,10 @@ ul, li {
     vertical-align: top;
 }
 
+.hithere, .index-button{
+    padding-top: 5vh;
+}
+
 .guesttable {
     width: 100%;
 }

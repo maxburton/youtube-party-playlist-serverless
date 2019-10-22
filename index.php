@@ -35,7 +35,7 @@ if ($result = mysqli_query($connection, $sql)) {
                         <h2>Let your friends add music or videos to a shared playlist in a fair way</h2>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row hithere">
                     <div class="col">
                         <?php
                         if (isset($_COOKIE["userID"])) {
@@ -93,7 +93,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                         $b = rand(2, 9);
                                         $c = $a + $b;
                                         echo '</div></div>
-                                        <div class="row">
+                                        <div class="row index-button">
                                         <div class="col">';
                                         echo '<input type="hidden" name="captchacode" value="' . $c . '">';
                                         echo '<h3>Prove you\'re not a robot: ' . $a . ' + ' . $b . ' = </h3><input class="textBox" type="text" name="captcha" />';
@@ -105,7 +105,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                     }
                                     echo '</form>
                                     </div></div>
-                                    <div class="row">
+                                    <div class="row index-button">
                                     <div class="col">
 			<button form="roomform" id="makeRoom" class="submit-button" >Make New Room</button>';
                                 }
@@ -115,7 +115,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                 if (isset($_COOKIE["hostID"])) {
                                     echo '
                                     </div></div>
-                                    <div class="row">
+                                    <div class="row index-button">
                                     <div class="col">
 		<button id="rehostRoom" class="submit-button" >Rehost Room ' . $_COOKIE["hostID"] . '</button>';
                                 }
@@ -125,7 +125,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                 if (isset($_COOKIE["userID"])) {
                                     echo '
                                     </div></div>
-                                    <div class="row">
+                                    <div class="row index-button">
                                     <div class="col">
 			<button id="joinRoom" class="submit-button" >Join Room</button>';
                                 }
