@@ -1,39 +1,39 @@
-table, td {
-  border-spacing: 0px 0;
-  /*border: 2px solid black;*/
-}
-
 ul, li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
-.indextable{
-    width:100%;
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60vh;
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+}
+
+.thumbnail{
+    height: 7vmax;
+}
+
+.indextable {
+    width: 100%;
     vertical-align: top;
 }
 
-.indextable td{
-    height: 100px;
-}
-
-.guesttable{
-    width:100%;
-}
-
-.hosttable td {
-	padding-left:10px;
-	padding-right:10px;
-	margin-right: 10px;
-	margin-left: 10px;
-	vertical-align: top;
-}
-
-.hosttable table {
+.guesttable {
     width: 100%;
 }
 
-.comingup{
-	width: 100%;
+.video-and-buttons {
+    padding-right: 20px;
+}
+
+.comingup {
+    width: 100%;
     margin-right: 0px;
     margin-left: auto;
 }
@@ -42,11 +42,10 @@ ul, li {
     color: red;
 }
 
-.border{
+.border {
     border: 2px solid black;
     border-collapse: collapse;
-    width:100%;
-
+    width: 100%;
 }
 
 .border td {
@@ -54,8 +53,7 @@ ul, li {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px 5px 5px 5px;
-    width:100%;
-
+    width: 100%;
 }
 
 .border th {
@@ -65,78 +63,74 @@ ul, li {
     padding: 5px 5px 5px 5px;
 }
 
-#urlBox
-{
-    height:55px;
-    width:100%;
-    font-size:20pt;
+#urlBox {
+    height: 55px;
+    width: 100%;
+    font-size: 20pt;
     font-family: 'Didact Gothic';
 }
 
-#nameBox
-{
-    height:55px;
-    width:100%;
-    font-size:20pt;
+#nameBox {
+    height: 55px;
+    width: 100%;
+    font-size: 20pt;
     font-family: 'Didact Gothic';
 }
 
-.textBox{
-    height:55px;
-    width:100%;
-    font-size:20pt;
+.content{
+    padding-top: 5vh;
+}
+
+.textBox {
+    height: 55px;
+    width: 100%;
+    font-size: 20pt;
     font-family: 'Didact Gothic';
 }
 
-#voteskip_counter{
-	width:100%;
-	font-size: 20pt;
+#voteskip_counter {
+    width: 100%;
+    font-size: 1.5vw;
 }
 
-h1{
-    font-size:72pt;
+h1, .content h1 {
+    font-size: 6vh;
     font-family: 'Arvo';
     text-align: center;
 }
 
-h2{
-	text-align: center;
-    font-size:32pt;
+h2 {
+    text-align: center;
+    font-size: 3vh;
     font-family: 'Arvo';
 }
 
-h3{
-	padding: 5px;
-    margin: 5px;
-    font-size:24pt;
+h3, .content h3 {
+    padding-bottom: 20px;
+    font-size: 3vh;
     font-family: 'Arvo';
 }
 
-p{
-    font-size:14pt;
+p, .content p {
+    font-size: 1.8vh;
     font-family: 'Didact Gothic';
 }
 
-.results td{
-	padding: 5px 5px 5px 5px;
+.results td {
+    padding: 5px 5px 5px 5px;
 }
 
-.results table{
-	width: 100%;
+.results table {
+    width: 100%;
 }
 
-.hostButtons td{
-	height: 160px;
-	text-align:center;
+.load {
+    font-weight: bold;
 }
 
-.load{
-	font-weight: bold;
-}
-
-.submit-button{
-    font-size:28pt;
+.submit-button {
+    font-size: 3vh;
     font-family: 'Didact Gothic';
-    height: 80px;
+    height: 5vh;
     width: 100%;
 }
