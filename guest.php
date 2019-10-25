@@ -197,6 +197,19 @@ if (!$badid) {
             document.getElementById("voteskip").onclick = function() {
                 location.href = "./voteskip.php?room=" + <?php echo $_GET['room']; ?>;
             }
+
+            // When enter is pressed in search box, perform a search
+            var input = document.getElementById("urlBox");
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function(event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("submitURL").click();
+                }
+            });
         </script>
     </div>
 </body>
