@@ -1,0 +1,5 @@
+.idea/
+.serverless/
+flask_yttp/node_modules/
+*.pyc
+flask_yttp/package-lock.json

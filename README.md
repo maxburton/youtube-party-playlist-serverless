@@ -1,20 +1,26 @@
 # Setup
-* To run on an ubuntu server, run:
-* `sudo apt-get install php-mysql`
-* That will allow PHP to communicate with the MySQL db
-* You will also need to create a file in /var/www/inc/ called dbinfo.inc: `sudo nano /var/www/inc/dbinfo.inc`
-* Open the file and populate it with:
-```
-<?php
-define('DB_SERVER', 'instancename.eu-west-1.rds.amazonaws.com');
-define('DB_USERNAME', 'username');
-define('DB_PASSWORD', 'password');
-define('DB_DATABASE', 'databasename');
+### AWS
+Following https://www.serverless.com/framework/docs/providers/aws/guide/credentials/#create-an-iam-user-and-access-key
 
-?>
-```
-* Ensure flushblacklist.php is executable: `sudo chmod +x flushblacklist.php`
-* Set up cronjob to run php files: `crontab -e`
-```
-0 4 * * * php -q /path_to_playlist/flushblacklist.php
-```
+* `npm install`
+
+* Create a IAM user with minimum serverless policies
+
+* Download the csv file containing the API key and secret key
+
+* using aws-cli, `aws configure` and input the keys
+
+### Python
+Following the steps in https://www.serverless.com/blog/flask-python-rest-api-serverless-lambda-dynamodb
+
+`cd flask`
+
+`npm init -f`
+
+`npm install --save-dev serverless-wsgi serverless-python-requirements`
+
+`virtualenv venv --python=python3`
+
+`source venv/bin/activate`
+
+`sls deploy`
