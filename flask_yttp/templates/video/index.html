@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Youtube Party Playlist{% endblock %}</h1>
+<h2>Let your friends add music or videos to a shared playlist in a fair way</h2>
+{% endblock %}
+
+{% block content %}
+<div class="container content">
+    <div class="row">
+        <div class="col">
+
+            <form method="post">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="textBox" name="name" value="{{session['name']}}" placeholder="Enter Your Name"
+                               required>
+                    </div>
+                </div>
+                <div class="row index-button">
+                    <div class="col">
+                        <input type="submit" class="submit-button" name="makeroom" value="Make A Room">
+                    </div>
+                </div>
+                <div class="row index-button">
+                    <div class="col">
+                        <input type="submit" class="submit-button" name="joinroom" value="Join A Room">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

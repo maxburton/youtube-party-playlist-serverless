@@ -11,7 +11,7 @@ custom:
     app: __init__.app
     packRequirements: false
   pythonRequirements:
-    dockerizePip: non-linux
+    dockerFile: ./Dockerfile
 
 provider:
   name: aws

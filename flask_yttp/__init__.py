@@ -7,9 +7,5 @@ app.config.from_mapping(
     SECRET_KEY='dev',
 )
 
-# a simple page that says hello
-@app.route('/')
-def hello():
-    return 'Hello, World!'
-
-
+from . import video
+app.register_blueprint(video.bp)

@@ -1,0 +1,136 @@
+ul, li {
+    list-style-type: none;
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60vh;
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+}
+
+.thumbnail {
+    height: 7vmax;
+}
+
+.indextable {
+    vertical-align: top;
+}
+
+.hithere, .index-button {
+    padding-top: 5vh;
+}
+
+.guesttable {
+    width: 100%;
+}
+
+.video-and-buttons {
+    padding-right: 20px;
+}
+
+.comingup {
+    width: 100%;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.red {
+    color: red;
+}
+
+.border {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.border td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+}
+
+.border th {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 5px 5px 5px;
+}
+
+input {
+    text-align: center;
+}
+
+.content {
+    padding-top: 5vh;
+}
+
+.textBox {
+    height: 55px;
+    width: 100%;
+    font-size: 20pt;
+    font-family: 'Didact Gothic';
+}
+
+#voteskip_counter {
+    width: 100%;
+    font-size: 1vw;
+}
+
+.content h1 {
+    font-size: 6vh;
+    font-family: 'Arvo';
+    text-align: center;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 2vh;
+    font-family: 'Arvo';
+}
+
+.content h3 {
+    padding-bottom: 20px;
+    font-size: 3vh;
+    font-family: 'Arvo';
+}
+
+.content p {
+    font-size: 1.8vh;
+    font-family: 'Didact Gothic';
+}
+
+.results td {
+    padding: 5px 5px 5px 5px;
+}
+
+.results table {
+    width: 100%;
+}
+
+.load {
+    font-weight: bold;
+}
+
+.submit-button {
+    font-size: 3vh;
+    font-family: 'Didact Gothic';
+    height: 5vh;
+    width: 100%;
+}
+
+.flash {
+    margin: 1em 0;
+    padding: 1em;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+}

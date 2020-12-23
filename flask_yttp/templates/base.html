@@ -1,0 +1,19 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAD///8AAAL4CAEE+Q4BA/gGAQL7JAMA/0ICAP+sAgD9rgEA/KMCAfylAAH8LgAC+zcAAfsvAAH6KQEC+AcAAvcCAAH/IwEB/bgAAfvAAAL8/wAC+/8CAvr/AwL4/wMD+f8DBPn/AwT5/wID+f8CA/v/AgL8/wIA/rMDAP2vAgH6FwEE+YQBA/rAAAD4yAEC+f8BA/r/AgP8/wED/f8AAf3/AAH9/wED/f8CA/z/AQP6/wEC+f8AAPj/AQP6/wEE+f8AA/v/BQfw/w4Q7v8DBuf/BAbw/wME9v8EBPr/BAL7/wQC+/8EBPr/AwT2/wQG8P8DBuf/DhDu/wUH8P8AA/v/AAL4/xQS7P9vdPr/XV7j/xoV2P8HAOz/BwH4/wQE9/8EBPf/BwH4/wcA7P8aFdj/XV7j/290+v8UEuz/AAL4/wAB9v8SFOP/pKj5/+vq//+rpfL/R0Te/wwM2v8AAub/AALm/wwM2v9HRN7/q6Xy/+vq//+kqPn/EhTj/wAB9v8AA/n/FBXi/6io9f//+//////+/9zl//+Ije3/My/g/zMv4P+Ije3/3OX//////v//+///qKj1/xQV4v8AA/n/AQH5/xsW3f+qrvL//v/9//7++P/7/v3/9/r//87Q///O0P//9/r///v+/f/+/vj//v/9/6qu8v8bFt3/AQH5/wMA+f8aFdz/q7Dy//z++//+/vf/+/79//j8///P0f7/z9H+//j8///7/v3//v73//z++/+rsPL/GhXc/wMA+f8BAfj/FBTh/6mq9P///f///v39/9Xe/f+HjOv/NDDf/zQw3/+HjOv/1d79//79/f///f//qar0/xQU4f8BAfj/AAD2/xEU4v+lqvj/7+z//6ym8f9GRN7/CwzZ/wAE5f8ABOT/CwzY/0dF3v+spvH/7+z//6Wq+P8RFOL/AAD2/wIA9/8XE+z/cHX6/19h4v8YE9j/BwHu/wUC+P8DBPf/AwT0/wcC9v8IAOv/GhTW/19h4v9wdfr/FxPs/wIA9/8DAvn/Cwbz/w8M7/8GA+v/BQL2/wMD+v8CA/v/AgP7/wAC+f8EA/v/BAP5/wYC8/8GA+r/Dwzv/wsG8/8DAvn/AQL7iAAB/coAAf3QAAH9/wED+/8CA/v/AgP7/wID+/8CA/v/AgP7/wID+/4CA/v9AgP7+gID+8cCA/ulAgP7fwEB/ygAAf+BAAP7rAEE+vgCA/v3AgP7+wID+/wCA/v/AgP7/wID+/8CA/v/AgP7/wID+/sCA/u3AgP7jQID+wn///8AAAD7AgAD9wQBA/gDAgP7GgID+zgCA/uUAgP7qAID+6gCA/upAgP7KAID+wECA/sCAgP7AQID+wH///8AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAA==" rel="icon" type="image/x-icon">
+<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<section class="content">
+  <header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+
+      {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>
