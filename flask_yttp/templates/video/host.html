@@ -8,10 +8,112 @@
 <div class="container content">
     <div class="row">
         <div class="col">
-
-
-
+            <h3>
+                {% if session["nextVideo"] %}
+                    {{session["nextVideo"]}}
+                {% else %}
+                    Now playing default playlist. Add some songs to resume.
+                {% endif %}
+            </h3>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-8 video-and-buttons">
+            <div class="row">
+                <div class="col video">
+                    <div class="row">
+                        <div class="col">
+                            <div class="iframe-container">
+                                <div id="player">
+                                    <script src="http://www.youtube.com/player_api"></script>
+                                    <script>
+                                        //create youtube player
+                                        let player;
+
+                                        function onYouTubePlayerAPIReady() {
+                                            player = new YT.Player('player', {
+                                                videoId: '{{session["videoURL"]}}',
+                                                events: {
+                                                    onReady: onPlayerReady,
+                                                    onStateChange: onPlayerStateChange
+                                                }
+                                            });
+                                        }
+
+                                        // autoplay video
+                                        function onPlayerReady(event) {
+                                            event.target.playVideo();
+                                        }
+
+                                        // when video ends
+                                        function onPlayerStateChange(event) {
+                                            if (event.data === 0) {
+                                                location.reload();
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hostButtons">
+                <div class="col">
+                    <button id="homeURL" class="submit-button">Home</button>
+                </div>
+                <div class="col">
+                    <button id="skipbutton" class="submit-button">Skip</button>
+                </div>
+                <div class="col">
+                    {% if session["nextVideo"] %}
+                        <button id="restart" class="submit-button">From The Top</button>
+                    {% else %}
+                        <strong><p class="red" id="voteskip_counter"></p></strong>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3 comingup">
+            <div class="row">
+                <div class="col" valign="top">
+                    <h3>Coming Up:</h3>
+                    <strong><p id="title' . $foundComingUp . '">{{session["nextTitle"]}}</p></strong>
+                    <img class="thumbnail" id="thumb' . $foundComingUp . '"
+                         src='https://img.youtube.com/vi/{{session["nextURL"]}}/mqdefault.jpg'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <p id="submitted' . $foundComingUp . '">submitted by ' . $username . '</p>
+                    <strong><p id="title1"></p></strong>
+                    <img class="thumbnail" id="thumb1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="submitted1"></p>
+                    <strong><p id="title2"></p></strong>
+                    <img class="thumbnail" id="thumb2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="submitted2"></p>
+                    <strong><p id="title3"></p></strong>
+                    <img class="thumbnail" id="thumb3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="submitted3"></p>
+                    <strong><p id="morevideos"></p></strong>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}
