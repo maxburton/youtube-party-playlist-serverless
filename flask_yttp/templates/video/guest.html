@@ -9,7 +9,31 @@
     <div class="row">
         <div class="col">
 
-            
+            <form method="post">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="textBox" name="search_query" value="{{g.search_query}}"
+                               placeholder="Search for a video" required>
+                    </div>
+                </div>
+
+                <div class="row index-button">
+                    <div class="col">
+                        <input type="submit" class="submit-button" name="search" value="Search">
+                    </div>
+                </div>
+            </form>
+
+            <div class="container">
+                {% for vid in g.search_info %}
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3>{{vid["title"]}}</h3>
+                            <img src='{{vid["thumb"]}}'>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
 
         </div>
     </div>

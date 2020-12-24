@@ -25,6 +25,10 @@ def get_vid_info(vid_id):
 def search(q, video_embeddable="true", video_syndicated="true", max_results=5):
     api_service_name = "youtube"
     api_version = "v3"
+
+    # Note: this is (naturally) not committed to git, and must be populated by going to the Google API console manually
+    # https://console.developers.google.com/apis/credentials
+    # If no API calls have been made in 90 days, the access may expire.
     with open(os.path.join(ROOT, "secrets/apikey.txt"), "r") as infile:
         api_key = infile.read().strip()
 
@@ -41,8 +45,7 @@ def search(q, video_embeddable="true", video_syndicated="true", max_results=5):
     )
     response = request.execute()
 
-    print(response)
-    return response
+    return response["items"]
 
 
 if __name__ == "__main__":

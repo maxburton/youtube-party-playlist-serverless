@@ -2,6 +2,7 @@ import base36
 from datetime import datetime
 import random
 import string
+import traceback
 
 from flask import flash, redirect, url_for
 
@@ -19,3 +20,7 @@ def gen_room_code(replace_chars=3):
 def flash_and_redirect(err_msg, redir="video.index"):
     flash(f"Error: {err_msg}")
     return redirect(url_for(redir))
+
+
+def get_err_msg(e):
+    return f"{type(e).__name__}, args: {e.args}, err_msg: {e}, traceback: {traceback.print_exc()}"

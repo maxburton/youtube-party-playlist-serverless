@@ -1,9 +1,9 @@
 from flask import (
-    Blueprint, flash, redirect, render_template, request, session, url_for
+    Blueprint, flash, redirect, render_template, request, session, url_for, g
 )
-from flask_yttp.helpers import gen_room_code, flash_and_redirect
+from flask_yttp.helpers import gen_room_code, flash_and_redirect, get_err_msg
 from flask_yttp.dynamo_calls import get_item_room, put_item_room, new_room_item
-from flask_yttp.youtube_api_calls import get_vid_info
+from flask_yttp.youtube_api_calls import get_vid_info, search
 
 bp = Blueprint('video', __name__)
 
@@ -68,4 +68,24 @@ def host():
 
 @bp.route('/guest', methods=('GET', 'POST'))
 def guest():
+    try:
+        if request.method == 'POST':
+            search_query = request.form['search_query']
+            error = None
+
+            if not search_query:
+                error = 'Search query is required.'
+
+            if error is None:
+                g.search_query = search_query
+                if "search" in request.form:
+                    search_results = search(search_query)
+                    search_info_wanted = [{"title": res["snippet"]["title"], "vid": res["id"]["videoId"],
+                                           "thumb": res["snippet"]["thumbnails"]["medium"]["url"]} for res in
+                                          search_results]
+                    g.search_info = search_info_wanted
+            else:
+                flash(error)
+    except Exception as e:
+        flash(get_err_msg(e))
     return render_template('video/guest.html')
