@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col">
             <h3>
-                {% if session["nextVideo"] %}
-                    {{session["nextVideo"]}}
+                {% if session["videoTitle"] %}
+                    {{session["videoTitle"]}}
                 {% else %}
                     Now playing default playlist. Add some songs to resume.
                 {% endif %}
@@ -35,7 +35,8 @@
                                                 videoId: '{{session["videoURL"]}}',
                                                 events: {
                                                     onReady: onPlayerReady,
-                                                    onStateChange: onPlayerStateChange
+                                                    onStateChange: onPlayerStateChange,
+                                                    onError: onPlayerError
                                                 }
                                             });
                                         }
@@ -50,6 +51,14 @@
                                             if (event.data === 0) {
                                                 location.reload();
                                             }
+                                        }
+
+                                        // when there's an error
+                                        function onPlayerError(event) {
+                                            console.log(`Player error: ${event}`);
+                                            setTimeout(function (){
+                                                location.reload();
+                                            }, 5000);
                                         }
                                     </script>
                                 </div>
@@ -66,7 +75,7 @@
                     <button id="skipbutton" class="submit-button">Skip</button>
                 </div>
                 <div class="col">
-                    {% if session["nextVideo"] %}
+                    {% if session["nextTitle"] %}
                         <button id="restart" class="submit-button">From The Top</button>
                     {% else %}
                         <strong><p class="red" id="voteskip_counter"></p></strong>

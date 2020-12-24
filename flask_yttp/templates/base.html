@@ -10,7 +10,7 @@
 <section class="content">
   <header>
       {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
+        <div class="flash"><h2>{{ message }}</h2></div>
       {% endfor %}
 
       {% block header %}{% endblock %}
