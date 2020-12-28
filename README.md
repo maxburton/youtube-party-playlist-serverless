@@ -24,3 +24,10 @@ Following the steps in https://www.serverless.com/blog/flask-python-rest-api-ser
 `source venv/bin/activate`
 
 `sls deploy`
+
+### Installing the YouTube API
+
+* Navigate to https://console.developers.google.com/apis/credentials and find the YouTube API key created for the YPPT project
+NOTE: If the API has not been used in 90 days, it will have expired, and a new project and API key will need to be created
+
+* Paste the API Key in the secrets/apikey.txt file

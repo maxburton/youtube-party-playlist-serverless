@@ -25,7 +25,13 @@ def index():
                 session["room_id"] = new_room_code
                 return redirect(url_for('video.host'))
             elif "joinroom" in request.form:
-                return redirect(url_for('video.guest'))
+                room_input = request.form['room_input']
+
+                if not room_input:
+                    flash('Room code is required.')
+                else:
+                    session["guest_room_id"] = room_input.lower()
+                    return redirect(url_for('video.guest'))
         else:
             flash(error)
 

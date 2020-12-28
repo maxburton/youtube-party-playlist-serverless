@@ -13,13 +13,20 @@
             <form method="post">
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="textBox" name="name" value="{{session['name']}}" placeholder="Enter Your Name"
+                        <input type="text" class="textBox" name="name" value="{{session['name']}}"
+                               placeholder="Enter your name"
                                required>
                     </div>
                 </div>
                 <div class="row index-button">
                     <div class="col">
                         <input type="submit" class="submit-button" name="makeroom" value="Make A Room">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="textBox" name="room_input" value="{{session['room_id']}}"
+                               placeholder="Enter a room code" style="text-transform:uppercase" required>
                     </div>
                 </div>
                 <div class="row index-button">
